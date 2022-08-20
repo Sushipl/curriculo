@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Site de Pedro H. Botter{% endblock %}
+
+{% block body %}
+    <h1>Curriculo de Pedro Henrique Botter Vasconcelos Fernandes<h1>
+    <h2>Redes sociais e contatos do meio profissional:</h2>
+    <ul>
+        <li>Email: pedrobottersuship@gmail.com</li>
+        <li><a href="https://t.me/Sushipl">Telegram</a>: @Sushipl</li>
+        <li><a href="https://github.com/Sushipl" rell="_">GitHub</a>: Sushipl</li>
+        <li><a href="https://www.linkedin.com/in/suship-l-14474b207">LinkedIn</a>: Suship l</li>
+        <li>Glassdoor: Pedro Botter</li>
+    </ul>
+    <h2>Formações:</h2>
+    <ul>
+        <li>Cursando Engenharia de Software</li>
+        <li>Linguagens:
+            <ul>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>HTML</li>
+                <li>CSS</li>
+            </ul>
+        </li>
+        <li>Conhecimento básico e se necessário posso me aprofundar:
+            <ul>
+                <li>PHP</li>
+                <li>Java</li>
+            </ul>
+        </li>
+        <li>Curso de Excel, PowerPoint, Word e Windows</li>
+    </ul>
+
+    <h2>Avaliações feitas por contratantes:</h2>
+    <form action="{% url 'cur' %}" method="POST">
+        <span>Seu nome:</span>
+        <input name="nome"></input>
+        <br>
+        <span>Imagem para lhe representar:</span>
+        <input name="img" type="file"></input>
+        <br>
+        <span>Avaliação de sua experiência profissional comigo:</span>
+        <input name="texto"></input><br>
+        <button type="submit">Enviar para Avaliação</button>
+    </form>
+{% endblock %}
