@@ -5,8 +5,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} {% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
+        body{
+            font-family: 'Roboto', sans-serif;
+            background-color: #2F5970;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24pt;
+            font-weight: 600;
+        }
+        section.fundo{
+            background-color: #a1d9f4;
+            padding-bottom: 10px;
+        }
+        section {
+            border-radius: 8px;
+            box-shadow: 0px 0px 4px;
+            margin: 2px 8px 2px 8px;
+            padding: 1px 4px 1px 4px;
+            background-color: #5098BF;
+        }
+        main {
+            padding: 0px 12px;
+            text-align: left;
+            font-size: 16pt;
+            line-height: 1;
+        }
+        h2 { 
+            font-weight: 600;
+            font-size: 20pt;
+        } 
+        p {
+            font-weight: 500;
+            line-height: 0.2;
+        }
+        ul {
+            font-weight: 400;
+            font-size: 13pt;
+            line-height: 1.2;
+        }
+        h2.form {
+            font-weight: 600;
+            font-size: 20pt;
+            padding-top: 2px;
+            margin: 4px 0px 8px 0px;
+        }
+        section.comi {
+            background-color: #65C0F0;
+            font-size: 14pt;
+            width: auto;
+            min-height: 16em;
+        }
+        div.cont{
+            width: auto;
+            height: auto;       
+        }
+        span.comi {
+            float: right;
+            text-align: right;
+        }
+        h1.comi{
+            text-align: right;
+            font-size: 18pt;
+            font-weight: 600;
+        }
+        p.comi {
+        }
+        img.img {
+            margin-top: 10px;
+            margin-left: 4px;
+            float: left;
+            max-width: 15em;
+            min-height: 15em;
+            max-height: 15em;
+        }
 
+        form {
+            padding: 8px 6px 10px 6px;
+            margin: 2px 8px 2px 8px;
+            margin-bottom: 0px;
+            box-shadow: 0px 1px 4px; 
+            border-radius: 8px 8px;
+            background-color: #65C0F0;
+            font-weight: 400;
+            text-align: left;
+            font-size: 14pt;
+            line-height: 30px;
+        }
     </style>
 </head>
 <body>

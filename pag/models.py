@@ -6,6 +6,6 @@ class Avaliacao(models.Model):
     nome = models.CharField(max_length=150)
     agora = models.DateField()
     texto = models.TextField()
-    img = models.ImageField(upload_to='imagens/', blank=True)
+    img = models.ImageField(upload_to='imagens/')
     def __str__(self):
         return self.nome

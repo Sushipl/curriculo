@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Site de Pedro H. Botter{% endblock %}
 
 {% block body %}
-    <h1>Curriculo de Pedro Henrique Botter Vasconcelos Fernandes<h1>
+<section class="fundo">
+    <h1>Curriculo de Pedro Henrique Botter Vasconcelos Fernandes</h1>
+    <main>
     <h2>Redes sociais e contatos do meio profissional:</h2>
     <ul>
         <li>Email: pedrobottersuship@gmail.com</li>
@@ -13,27 +16,45 @@
         <li>Glassdoor: Pedro Botter</li>
     </ul>
     <h2>Formações:</h2>
+    <p>Estudando no momento:</p>
     <ul>
-        <li>Cursando Engenharia de Software</li>
-        <li>Linguagens:
-            <ul>
-                <li>JavaScript</li>
-                <li>Python</li>
-                <li>HTML</li>
-                <li>CSS</li>
-            </ul>
-        </li>
-        <li>Conhecimento básico e se necessário posso me aprofundar:
-            <ul>
-                <li>PHP</li>
-                <li>Java</li>
-            </ul>
-        </li>
-        <li>Curso de Excel, PowerPoint, Word e Windows</li>
+        <li class="men">Bacharelado de Engenharia de Software</li>
+        <li class="men">Curso de Assistente Administrativo</li>
+        <li class="men">Curso de Informática Profissional</li>
     </ul>
-
-    <h2>Avaliações feitas por contratantes:</h2>
-    <form action="{% url 'cur' %}" method="POST">
+    <p>Linguagens:</p>
+    <ul>
+        <li class="men">JavaScript</li>
+        <li class="men">Python</li>
+        <li class="men">HTML</li>
+        <li class="men">CSS</li>
+    </ul>
+    <p>Conhecimento básico e se necessário posso me aprofundar:</p>
+    <ul>
+        <li class="men">PHP</li>
+        <li class="men">Java</li>
+    </ul>
+    <p>Terminados:</p>
+    <ul>
+        <li>Curso de Excel, PowerPoint, Word e Windows</li>
+        <li>Ensino médio</li>
+    </ul>
+    </main>
+    {% for a in av %}
+    <section class="comi">
+        <div class="cont">
+            <img src="{{MEDIA_URL}} {{a.img.url}}" class='img'>
+            <span class="comi">    
+                <h1 class="comi">{{a.nome}}</h1>
+                <br>
+                <p class="comi">{{a.texto}}</p>
+            </span>
+        </div>
+    </section>
+    <br>
+    {% endfor %}
+    <form action="{% url 'cur' %}" method="POST" enctype="multipart/form-data">
+        <h2 class="form">Avaliações feitas por contratantes:</h2>
         <span>Seu nome:</span>
         <input name="nome"></input>
         <br>
@@ -44,4 +65,5 @@
         <input name="texto"></input><br>
         <button type="submit">Enviar para Avaliação</button>
     </form>
+</section>
 {% endblock %}

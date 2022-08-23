@@ -2,21 +2,23 @@ from datetime import datetime
 from django.shortcuts import render, redirect
 from django.template import context
 from django.http import HttpResponse
-from .models import Avaliacao as av
+from .models import Avaliacao as Av
 from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
 import smtplib
 import email.message
+from .models import Avaliacao
 
 @csrf_exempt
 def cur(request):
     if request.method == "GET":
-        return render(request, 'main.html')
+        av = Avaliacao.objects.filter(veri=True).all()
+        return render(request, 'main.html', context={"av": av})
     if request.method == "POST":
         nome = request.POST.get('nome')
         img = request.POST.get('img')
         texto = request.POST.get('texto')
-        reg = av(nome=nome, texto=texto, agora=datetime.now(),img=img)
+        reg = Av(nome=nome, texto=texto, img=img, agora=datetime.now())
         reg.save()
         enviar_email(texto)
         return redirect('/cur/')
