@@ -8,6 +8,8 @@ from django.views.decorators.csrf import csrf_exempt
 import smtplib
 import email.message
 from .models import Avaliacao
+import os
+from dotenv import load_dotenv
 
 @csrf_exempt
 def cur(request):
@@ -33,7 +35,7 @@ def enviar_email(texto):
     msg['Subject'] = "Verificação de Avaliação"
     msg['From'] = 'pedrobotter2016@gmail.com'
     msg['To'] = 'pedrobotter2016@gmail.com' 
-    password = 'ihwtgqfmugxnyoxs' 
+    password = os.environ['EMAIL_HOST_PASSWORD']
     msg.add_header('Content-Type', 'text/html')
     msg.set_payload(corpo_email )
 
