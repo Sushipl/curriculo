@@ -35,7 +35,7 @@ def enviar_email(texto):
     msg['Subject'] = "Verificação de Avaliação"
     msg['From'] = 'pedrobotter2016@gmail.com'
     msg['To'] = 'pedrobotter2016@gmail.com' 
-    password = os.environ['EMAIL_HOST_PASSWORD']
+    password = 'ihwtgqfmugxnyoxs' 
     msg.add_header('Content-Type', 'text/html')
     msg.set_payload(corpo_email )
 
